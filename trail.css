@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+.home{
+    overflow-y: hidden;
+    background-image: url('../Images/hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.menu a {
+    transition: color 0.5s ease;
+    color: #fff;
+  }
+  .navbar.navbar-scrolled {
+    background-color: #333;
+  }
+.menu.navbar-scrolled a{
+    color: rgb(255, 255, 255);
+  }
+
+.navbar{
+    background-color:transparent;
+    z-index: 1;
+}
+.navbar .logo{
+    font-size: xx-large;
+    font-weight: bolder;
+}
+#hero h1{
+    font-size:5rem;
+    letter-spacing: 0.7rem;
+}
+#hero p{
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+}
+.social-links a i{
+    color: black;
+    font-size: 1.5rem;
+}
+.carousel-inner img {
+    margin: auto;
+}
+footer ul li a{
+    padding: 0.2rem;
+    margin: 0.2rem;
+    text-decoration: none;
+    color: white;
+}
+footer ul li a:hover{
+    background-color: aliceblue;
+    border-radius: 0.2rem;
+    color: black;
+}
+header .menu a{
+    transition: 0.5s ease-in-out;   
+}
+header .menu a:hover{
+    text-decoration: underline;
+    text-decoration-color:black;
+    text-decoration-thickness:0.2rem;
+}
