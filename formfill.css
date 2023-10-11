@@ -62,7 +62,7 @@ body{
     top: -25px;
 }
 .form-group span{
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     font-weight: bolder;
