@@ -6,9 +6,11 @@ const password2 = document.getElementById('password2');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-    
-
-    validateInputs();
+    if (validateInputs()) {
+        alert('Registration Successful');
+    } else {
+        alert('Registration Failed. Please check the form for errors.');
+    }
 });
 
 const setError = (element, message) => {
