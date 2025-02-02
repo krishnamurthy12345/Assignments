@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp-like Emoji Picker</title>
+  <style>
+    .input-container {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      padding: 5px;
+      border-radius: 5px;
+      width: 300px;
+    }
+
+    .emoji-picker {
+      display: none;
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .emoji-picker span {
+      font-size: 24px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .emoji-picker span:hover {
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+
+    .emoji-btn {
+      cursor: pointer;
+      font-size: 24px;
+      margin-left: 5px;
+    }
+
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="input-container">
+  <input type="text" id="textInput" placeholder="Type a message..." />
+  <div class="emoji-btn" id="emojiButton">😊</div>
+</div>
+
+<div class="emoji-picker" id="emojiPicker">
+  <span>👍</span>
+  <span>👎</span>
+  <span>🤔</span>
+  <span>✅</span>
+  <span>❌</span>
+</div>
+
+<script>
+  const emojiButton = document.getElementById('emojiButton');
+  const emojiPicker = document.getElementById('emojiPicker');
+  const textInput = document.getElementById('textInput');
+
+  // Toggle emoji picker on button click
+  emojiButton.addEventListener('click', () => {
+    emojiPicker.classList.toggle('show');
+  });
+
+  // Add emoji to input when clicked
+  emojiPicker.addEventListener('click', (e) => {
+    if (e.target.tagName === 'SPAN') {
+      textInput.value += e.target.textContent;
+      emojiPicker.classList.remove('show'); // Hide picker after selection
+    }
+  });
+
+  // Hide emoji picker when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!emojiPicker.contains(e.target) && !emojiButton.contains(e.target)) {
+      emojiPicker.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>
